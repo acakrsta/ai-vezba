@@ -1,0 +1,55 @@
+---
+title: "Git navike koje mi štede vreme svaki dan"
+date: "2026-04-03"
+description: "Ne radi se o naprednim git komandama. Radi se o malim navikama koje sprečavaju probleme pre nego što nastanu."
+tags: ["git", "razvoj", "alati"]
+draft: false
+---
+
+Git je alat koji koristim svaki dan, a dugo sam ga koristio samo na nivou `add`, `commit`, `push`. Funkcionisalo je — sve dok nije prestalo da funkcioniše.
+
+Evo šta sam promenio.
+
+## Commit poruke koje nešto znače
+
+Najlakše je pisati `fix` ili `wip` kao commit poruku. I najskuplje, jer za mesec dana nemaš pojma šta si popravio ili zašto.
+
+Jedino pravilo koje mi je pomoglo: poruka treba da odgovori na pitanje **"Šta ovo radi?"**, ne **"Šta sam ja radio?"**.
+
+```
+# Loše
+fix bug
+update styles
+wip
+
+# Dobro
+Ispravi pogrešan datum u formatiranju posta
+Dodaj hover stanje za navigacione linkove
+Ukloni zavisnost koja se više ne koristi
+```
+
+## Grane za svaku promenu
+
+Dugo sam radio direktno na `main`. Kad nešto krene naopako, nemaš kud — sve je na jednoj grani, sve je pomešano.
+
+Pravilo je jednostavno: svaka promena, makar trivijalna, ide na posebnu granu. `git checkout -b fix/post-datum`. Ako promena upropasti nešto, `main` je i dalje čist.
+
+## `git stash` pre nego što promeniš kontekst
+
+Klasična situacija: usred jedne promene stiže hitan zadatak. Bez razmišljanja počneš da menjaš kod, pa zaboraviš šta je bilo od čega.
+
+```bash
+git stash        # Sačuvaj trenutne promene
+# Sada radi šta treba
+git stash pop    # Vrati se na to gde si bio
+```
+
+Stash je privremena polica. Koristi je.
+
+## `git log --oneline` kao jutarnja rutina
+
+Pre nego što počnem sa radom, proverim `git log --oneline -10`. Deset poslednjih commitova, svaki u jednom redu. Podseća me gde sam stao i šta je sledeće.
+
+---
+
+Nije u pitanju savladavanje git-a. Radi se o navikama koje, svaka ponaosob, koštaju pet sekundi — a zajedno štede sate.

@@ -1,0 +1,43 @@
+---
+title: "Zašto koristim TypeScript čak i za male projekte"
+date: "2026-04-10"
+description: "TypeScript se često doživljava kao overhead za manje projekte. Nakon par godina korišćenja, promenio sam mišljenje."
+tags: ["typescript", "javascript", "razvoj"]
+draft: false
+---
+
+Dugo sam odlagao prelaz na TypeScript. Argumenti su mi delovali poznato: "mali projekat je", "sam radim", "ionako znam šta moj kod radi". Sve dok jednog dana nisam otvorio projekat koji nisam dirao dva meseca.
+
+Nisam znao šta moj kod radi.
+
+## Problem nije pamćenje
+
+Nije problem u tome što sam zaboravio. Problem je što JavaScript ne nudi nikakav otpor kad napraviš grešku. Proslediš string tamo gde se očekuje broj, i jedino što dobiješ je `NaN` negde duboko u logici — ako imaš sreće da to uopšte primetiš.
+
+TypeScript je otpor. Dobra vrsta otpora.
+
+## Nije samo o greškama
+
+Najvrednija stvar kod TypeScript-a nije type-checking — to je autocomplete koji zapravo radi.
+
+Kad tipiziraš podatke koje dobijaš sa API-ja, editor ti odmah pokazuje koja polja postoje, koja su opciona, koji su tipovi. Nema više provere dokumentacije svakih pet minuta. Nema više `console.log(response)` da vidiš strukturu.
+
+```typescript
+interface Post {
+  id: number;
+  title: string;
+  publishedAt: string;
+  tags: string[];
+}
+
+function formatPost(post: Post) {
+  // Editor zna sve o `post` objektu
+  return `${post.title} — ${post.publishedAt}`;
+}
+```
+
+## Overhead koji ne traje dugo
+
+Setup traje petnaestak minuta. `tsconfig.json`, par tipova za domenske objekte, i to je to. Nakon toga ne pišeš značajno više koda — pišeš isti kod, samo sa malo više informacija.
+
+Koliko god projekat bio mali, jednog dana ćeš se vratiti na njega. I taj budući ti će ti biti zahvalan.

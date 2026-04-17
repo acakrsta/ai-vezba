@@ -28,9 +28,7 @@ export default function Header() {
             alt="CoaCoa"
             width={896}
             height={1195}
-            className={`h-10 w-auto transition-all duration-300 ${
-              scrolled ? "brightness-0" : "brightness-0 invert"
-            }`}
+            className="h-10 w-auto"
             priority
           />
         </Link>

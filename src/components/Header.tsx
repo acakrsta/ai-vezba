@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -21,13 +22,17 @@ export default function Header() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-8 md:px-14 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className={`text-sm font-bold tracking-[0.2em] uppercase transition-colors duration-300 font-[family-name:var(--font-geist-sans)] ${
-            scrolled ? "text-foreground" : "text-white"
-          }`}
-        >
-          CoaCoa
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="CoaCoa"
+            height={32}
+            width={120}
+            className={`h-8 w-auto transition-all duration-300 ${
+              scrolled ? "brightness-0" : "brightness-0 invert"
+            }`}
+            priority
+          />
         </Link>
 
         <nav>

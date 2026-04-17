@@ -32,11 +32,11 @@ export default function Header() {
             priority
           />
           <span
-            className={`font-bold text-lg transition-colors duration-300 ${
+            className={`text-xl uppercase font-[family-name:var(--font-graffiti)] transition-colors duration-300 ${
               scrolled ? "text-foreground" : "text-white"
             }`}
           >
-            zglobići
+            Zglobići
           </span>
         </Link>
 

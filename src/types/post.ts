@@ -3,6 +3,7 @@ export interface PostFrontmatter {
   date: string; // ISO 8601, npr. "2025-01-15"
   description: string;
   tags: string[];
+  image?: string; // npr. "/post1.jpg"
   draft?: boolean;
 }
 

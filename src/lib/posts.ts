@@ -25,6 +25,7 @@ export function getAllPosts(): Post[] {
         description: data.description ?? "",
         tags: data.tags ?? [],
         draft: data.draft ?? false,
+        image: data.image ?? null,
         readingTime: rt.text,
       };
     })
@@ -46,6 +47,7 @@ export function getPostBySlug(slug: string): Post | null {
     date: data.date ?? "",
     description: data.description ?? "",
     tags: data.tags ?? [],
+    image: data.image ?? null,
     draft: data.draft ?? false,
     readingTime: rt.text,
   };

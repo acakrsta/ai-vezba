@@ -11,14 +11,14 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="max-w-2xl mx-auto px-6 pt-28 pb-16">
-      <h1 className="text-2xl font-bold mb-8">Blog</h1>
+    <div className="max-w-6xl mx-auto px-6 pt-28 pb-16">
+      <h1 className="text-2xl font-bold mb-12">Blog</h1>
       {posts.length === 0 ? (
         <p className="text-foreground/50">Nema objavljenih postova.</p>
       ) : (
-        <div>
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+          {posts.map((post, index) => (
+            <PostCard key={post.slug} post={post} index={index} />
           ))}
         </div>
       )}

@@ -17,8 +17,8 @@ export default function Footer() {
       <div className="border-t border-white/10 mx-6" />
 
       {/* Linkovi */}
-      <div className="flex justify-center px-8 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8 text-xs tracking-[0.15em] uppercase text-center">
+      <div className="px-8 md:px-14 py-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 text-xs tracking-[0.15em] uppercase justify-items-center">
           <div className="flex flex-col gap-3">
             <a
               href="https://instagram.com"
@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="pb-8 text-center">
+      <div className="px-8 md:px-14 pb-8 flex justify-end">
         <p className="text-[11px] tracking-[0.15em] uppercase text-white/25">
           ©2026 Zglobići
         </p>

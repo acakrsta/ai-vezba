@@ -28,7 +28,7 @@ export default function Header() {
             alt="CoaCoa"
             width={896}
             height={1195}
-            className="h-10 w-auto"
+            className="h-16 w-auto"
             priority
           />
         </Link>

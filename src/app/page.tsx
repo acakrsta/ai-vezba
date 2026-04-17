@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/posts";
 import PostCard from "@/components/PostCard";
 import Hero from "@/components/Hero";
+import NewsletterSection from "@/components/NewsletterSection";
 
 export const metadata: Metadata = {
   title: "CoaCoa",
@@ -25,6 +26,7 @@ export default function HomePage() {
           </div>
         )}
       </section>
+      <NewsletterSection />
     </>
   );
 }

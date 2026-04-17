@@ -22,7 +22,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-5xl mx-auto px-8 md:px-14 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
             alt="CoaCoa"
@@ -31,6 +31,13 @@ export default function Header() {
             className="h-16 w-auto"
             priority
           />
+          <span
+            className={`font-bold text-lg transition-colors duration-300 ${
+              scrolled ? "text-foreground" : "text-white"
+            }`}
+          >
+            zglobići
+          </span>
         </Link>
 
         <nav>

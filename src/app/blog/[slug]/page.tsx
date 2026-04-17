@@ -61,7 +61,7 @@ export default async function PostPage({
   const { content } = matter(raw);
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12">
+    <div className="max-w-2xl mx-auto px-6 pt-28 pb-16">
       <header className="mb-10">
         <h1 className="text-3xl font-bold leading-tight">{post.title}</h1>
         <div className="mt-3 flex items-center gap-3 flex-wrap text-sm text-foreground/50">

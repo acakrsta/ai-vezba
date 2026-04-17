@@ -32,7 +32,7 @@ export default async function TagPage({
   if (posts.length === 0) notFound();
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12">
+    <div className="max-w-2xl mx-auto px-6 pt-28 pb-16">
       <h1 className="text-2xl font-bold mb-8">
         <span className="text-foreground/40 font-normal">#</span>
         {tag}

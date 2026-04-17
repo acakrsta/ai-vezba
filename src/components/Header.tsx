@@ -1,42 +1,55 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="w-full border-b border-black/10 dark:border-white/10">
-      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur-sm border-b border-foreground/10"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-5xl mx-auto px-8 md:px-14 h-16 flex items-center justify-between">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight font-[family-name:var(--font-geist-sans)]"
+          className={`text-sm font-bold tracking-[0.2em] uppercase transition-colors duration-300 font-[family-name:var(--font-geist-sans)] ${
+            scrolled ? "text-foreground" : "text-white"
+          }`}
         >
           CoaCoa
         </Link>
 
         <nav>
           <ul className="flex items-center gap-8">
-            <li>
-              <Link
-                href="/"
-                className="text-sm text-foreground/70 hover:text-foreground transition-colors"
-              >
-                Početna
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/o-meni"
-                className="text-sm text-foreground/70 hover:text-foreground transition-colors"
-              >
-                O meni
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog"
-                className="text-sm text-foreground/70 hover:text-foreground transition-colors"
-              >
-                Blog
-              </Link>
-            </li>
+            {[
+              { href: "/", label: "Početna" },
+              { href: "/o-meni", label: "O meni" },
+              { href: "/blog", label: "Blog" },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={`text-xs tracking-[0.15em] uppercase transition-colors duration-300 ${
+                    scrolled
+                      ? "text-foreground/60 hover:text-foreground"
+                      : "text-white/70 hover:text-white"
+                  }`}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

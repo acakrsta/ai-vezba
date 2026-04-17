@@ -28,7 +28,7 @@ export default function Hero() {
         {/* Srednji/donji deo — glavni tekst */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
           <div>
-            <h1 className="text-[clamp(4rem,12vw,10rem)] font-bold leading-none tracking-tight uppercase">
+            <h1 className="text-[clamp(4rem,12vw,10rem)] font-black leading-none tracking-tight uppercase font-[family-name:var(--font-orbitron)]">
               CoaCoa
             </h1>
             <p className="mt-4 text-sm tracking-[0.2em] uppercase text-white/50">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Rubik_Dirt } from "next/font/google";
+import { Geist, Geist_Mono, Rubik_Dirt, Orbitron } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -18,6 +18,12 @@ const rubikDirt = Rubik_Dirt({
   variable: "--font-graffiti",
   subsets: ["latin", "latin-ext"],
   weight: "400",
+});
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="sr"
-      className={`${geistSans.variable} ${geistMono.variable} ${rubikDirt.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${rubikDirt.variable} ${orbitron.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />

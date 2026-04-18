@@ -32,8 +32,8 @@ export default async function TagPage({
   if (posts.length === 0) notFound();
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-28 pb-16">
-      <h1 className="text-2xl font-bold mb-12">
+    <div className="max-w-6xl mx-auto px-5 md:px-6 pt-24 md:pt-28 pb-16">
+      <h1 className="text-xl md:text-2xl font-bold mb-8 md:mb-12">
         <span className="text-foreground/40 font-normal">#</span>
         {tag}
       </h1>

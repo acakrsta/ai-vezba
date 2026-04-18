@@ -64,26 +64,23 @@ export default async function PostPage({
   return (
     <div>
       {post.image && (
-        <div
-          className="relative w-full"
-          style={{ height: "66.67vh" }}
-        >
+        <div className="relative w-full h-[50vh] md:h-[66.67vh]">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${post.image})` }}
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex items-center justify-center px-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-white text-center leading-tight drop-shadow-lg">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center leading-tight drop-shadow-lg">
               {post.title}
             </h1>
           </div>
         </div>
       )}
 
-      <div className="max-w-2xl mx-auto px-6 pt-12 pb-16">
+      <div className={`max-w-2xl mx-auto px-5 md:px-6 pb-16 ${post.image ? "pt-10 md:pt-12" : "pt-24 md:pt-28"}`}>
         {!post.image && (
-          <h1 className="text-3xl font-bold leading-tight mb-10">{post.title}</h1>
+          <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-8 md:mb-10">{post.title}</h1>
         )}
         <header className="mb-10">
           <div className="flex items-center gap-3 flex-wrap text-sm text-foreground/50">

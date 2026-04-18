@@ -15,7 +15,7 @@ interface PostCardProps {
   index: number;
 }
 
-const rotations = ["rotate-[-2deg]", "rotate-0", "rotate-[2deg]"];
+const rotations = ["md:rotate-[-2deg]", "rotate-0", "md:rotate-[2deg]"];
 
 export default function PostCard({ post, index }: PostCardProps) {
   const rotation = rotations[index % rotations.length];

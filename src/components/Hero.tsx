@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/55" />
 
       {/* Sadržaj */}
-      <div className="relative h-full flex flex-col justify-between px-8 md:px-14 py-24 text-white">
+      <div className="relative h-full flex flex-col justify-between px-6 md:px-14 py-24 pt-28 md:pt-24 text-white">
 
         {/* Gornji deo — tagline */}
         <div>
@@ -26,12 +26,12 @@ export default function Hero() {
         </div>
 
         {/* Srednji/donji deo — glavni tekst */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12">
           <div>
-            <h1 className="text-[clamp(4rem,12vw,10rem)] font-black leading-none tracking-tight uppercase font-[family-name:var(--font-orbitron)]">
+            <h1 className="text-[clamp(3.5rem,14vw,10rem)] font-black leading-none tracking-tight uppercase font-[family-name:var(--font-orbitron)]">
               CoaCoa
             </h1>
-            <p className="mt-4 text-sm tracking-[0.2em] uppercase text-white/50">
+            <p className="mt-3 md:mt-4 text-sm tracking-[0.2em] uppercase text-white/50">
               Grafički dizajn & razmišljanja
             </p>
           </div>

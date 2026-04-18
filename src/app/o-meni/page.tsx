@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function OmeniPage() {
   return (
-    <div className="max-w-2xl mx-auto px-6 pt-28 pb-16">
-      <h1 className="text-2xl font-bold mb-8">O meni</h1>
+    <div className="max-w-2xl mx-auto px-5 md:px-6 pt-24 md:pt-28 pb-16">
+      <h1 className="text-xl md:text-2xl font-bold mb-8">O meni</h1>
       <div className="prose prose-neutral dark:prose-invert max-w-none">
         <p>
           Grafički dizajner sa iskustvom u vizuelnoj komunikaciji, brendingu i
